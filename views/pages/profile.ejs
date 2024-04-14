@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+
+<body>
+    <div class="max-w-[1440px] mx-auto border h-screen relative flex justify-center w-full gap-5 pt-20">
+        <div class="flex flex-col gap-5 text-2xl w-[50rem]">
+            <div class="flex items-center justify-center my-5">
+                <img class="cursor-pointer w-[15rem] h-[15rem] rounded-full" src="/assets/profile.png" alt="">
+            </div>
+            <div class="flex items-center gap-5"> <span class="font-bold">Name :</span><span><%= data.first_name %> <%= data.last_name %></span></div>
+            <div class="flex items-center gap-5"> <span class="font-bold">Email
+                    :</span><span><%= data.email %> </span></div>
+            <div class="flex items-center gap-5"> <span class="font-bold">Role :</span><span><%= data.role %> </span></div>
+            <div class="flex items-center gap-5"> <span class="font-bold">Date of birth :</span>
+                <span>
+                    <% const birthDate=new Date(data.dob); %>
+                  <%= birthDate.getDate() %>
+                    <%= birthDate.toLocaleString('default', { month: 'long' }) %>
+                      <%= birthDate.getFullYear() %>
+                </span>
+            </div>
+            <div class="flex items-center gap-5 capitalize"> <span class="font-bold">Gender :</span>
+                <span><%= data.gender %></span>
+            </div>
+            <div class="flex gap-5 text-wrap items-start"> <span class="font-bold text-nowrap">Address :</span><span class="tracking-wide"><%= address.address1 %>, <%= address.address2 %>, <%= address.city %>, <%= address.state %>, <%= address.country %>, <%= address.pincode %> </span></div>
+            <div class="flex items-center gap-5"> <span class="font-bold">Account Created At :</span><span>
+                <% const createdDate=new Date(data.created_at); %>
+              <%= createdDate.getDate() %>
+                <%= createdDate.toLocaleString('default', { month: 'long' }) %>
+                  <%= createdDate.getFullYear() %>
+                  at <%= data.created_at.toLocaleString().split(",")[1] %> 
+            </span></div>
+            <div class="flex items-center justify-end my-5">
+                <button id="editProfile"
+                    class="w-fit py-2 px-5 text-center justify-center bg-yellow-800 text-white rounded-lg cursor-pointer text-lg">Edit
+                    Profile</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/profile.js"></script>
+</html>

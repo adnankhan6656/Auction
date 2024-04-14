@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+
+<body>
+    <div class="max-w-[1440px] mx-auto border h-screen relative flex items-center">
+        <div id="sideBar" class="flex items-center flex-col gap-5 h-full bg-yellow-200 border-red-500 w-[20%] p-5">
+            <span class="italic font-bold text-yellow-800 text-2xl text-nowrap">Auction Plateform</span>
+            <div class="flex items-center flex-col gap-5 my-5 w-full">
+                <span
+                    class="py-3 text-center fle items-center justify-center bg-yellow-500 w-full rounded-lg cursor-pointer">
+                    Dashboard</span>
+                <span
+                    class="py-3 text-center fle items-center justify-center bg-yellow-500 w-full rounded-lg cursor-pointer">Add
+                    Products</span>
+                <span
+                    class="py-3 text-center fle items-center justify-center bg-yellow-500 w-full rounded-lg cursor-pointer" id="add">Add
+                    Auctions</span>
+                <span
+                    class="py-3 text-center fle items-center justify-center bg-yellow-500 w-full rounded-lg cursor-pointer">All
+                    Products</span>
+                <span
+                    class="py-3 text-center fle items-center justify-center bg-yellow-500 w-full rounded-lg cursor-pointer">Logout</span>
+            </div>
+        </div>
+        <div class="w-[80%] border h-full">
+            <div class="header border flex items-center justify-end gap-10 p-5">
+                <span class="cursor-pointer fill-yellow-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="18" cy="6" r="3"></circle>
+                        <path
+                            d="M13 6c0-.712.153-1.387.422-2H6c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7.422A4.962 4.962 0 0 1 18 11a5 5 0 0 1-5-5z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="cursor-pointer fill-yellow-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                            d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+            <div class="flex items-center justify-center w-full h-full text-5xl">Seller Dashboard Content</div>
+        </div>
+
+    </div>
+
+
+    <script src="/js/seller_dashboard.js"></script>
+</body>
+
+</html>

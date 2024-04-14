@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+
+<body>
+    <div class="max-w-[1440px] mx-auto border h-screen relative flex justify-center w-full gap-5 pt-20">
+        <form class="flex flex-col gap-5 text-lg w-[50rem]" id="editProfileForm">
+            <div class="flex items-center justify-center my-5">
+                <img class="cursor-pointer w-[15rem] h-[15rem] rounded-full" src="/assets/profile.png" alt="">
+            </div>
+            <div class="grid grid-cols-2 gap-x-10 gap-y-5">
+                <div class="flex flex-col gap-2 justify-start">
+                    <label class="font-medium" for="first_name">Full Name :</label>
+                    <div class="flex w-full gap-5 items-center">
+                        <input class="border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="full_name" id="full_name" placeholder="First Name"  value="<%= data.first_name %>"/>
+
+                        <span class="hidden" id="full_name_valid">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z">
+                                </path>
+                            </svg></span>
+
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 justify-start">
+                    <label class="font-medium" for="last_name">Last Name :</label>
+                    <div class="flex w-full gap-5 items-center">
+                        <input class="border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="last_name" id="last_name" placeholder="Last Name" value="<%= data.last_name %>"/>
+
+                        <span class="hidden" id="last_name_valid">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 justify-start">
+                    <label class="font-medium" for="last_name">Email :</label>
+                    <div class="flex w-full gap-5 items-center">
+                        <input class="select-none border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text" name="email"
+                            id="email" placeholder="Email" disabled value="<%= data.email %>"/>
+
+                        <span class="hidden" id="email_valid">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 justify-start">
+                    <label class="font-medium" for="date_of_birth">Date of Birth :</label>
+                    <div class="flex w-full gap-5 items-center">
+                        <input class=" border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="date_of_birth" id="date_of_birth" placeholder="Date of birth" value="<%= data.dob.split("-").reverse().join("/") %>"/>
+
+                        <span class="hidden" id="date_of_birth_valid">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="w-full flex gap-5 col-span-2">
+                    <div class="flex w-full items-center justify-start gap-5">
+                        <label for="gender" class="font-medium">Choose a Gender</label>
+                        <input type="radio" id="male" name="gender" value="male" <%= data.gender==="male" ? 'checked' : '' %>>
+                        <label for="male" class="cursor-pointer">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" <%= data.gender==="female" ? 'checked' : '' %>>
+                        <label for="female" class="cursor-pointer">Female</label>
+                    </div>
+                    <span class="hidden" id="gender_valid">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z">
+                            </path>
+                        </svg></span>
+                </div>
+                <!-- <div class="flex flex-col gap-2 justify-start col-span-2">
+                    <label class="font-medium" for="address">Address :</label>
+                    <div class="grid grid-cols-2 w-full gap-5 items-center">
+                        <input class=" border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="address" id="address" placeholder="Address line 1" />
+                        <input class=" border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="address" id="address" placeholder="Address line 2" />
+                        <input class="border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="state" id="state" placeholder="State" />
+                        <input class="border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="city" id="city" placeholder="City" />
+                        <input class="border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="country" id="country" placeholder="Country" />
+                        <input class="border border-gray-300 px-2 py-1 rounded w-full outline-none" type="text"
+                            name="pincode" id="pincode" placeholder="Pincode" />
+
+                        <span class="hidden" id="address_valid">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z">
+                                </path>
+                            </svg></span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="flex items-center justify-end my-5">
+                <button type="button" id="editButton"
+                    class="duration-300 hover:-translate-y-2 w-fit py-2 px-5 text-center justify-center bg-yellow-800 text-white rounded-lg cursor-pointer text-lg">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="/js/edit_profile.js"></script>
+
+</html>

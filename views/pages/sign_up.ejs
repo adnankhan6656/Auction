@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/output.css" />
+  <script src="/js/userSideJs.js"></script>
+</head>
+
+<body>
+
+  <div class="max-w-xl mx-auto p-8 my-10  rounded-2xl shadow-2xl">
+
+    <h1 class="font-bold text-5xl text-center">Register</h1>
+  <form id="Register" >
+    <div class="grid grid-cols-1 gap-5 mt-5">
+      <div class="flex flex-col">
+
+        <input class=" bg-gray-100 text-gray-900  p-3 rounded-lg focus:outline-none focus:shadow-outline" type="text"
+          name="firstName" placeholder="First Name*" id="firstName" />
+        <span class="errorFirstName hidden"></span>
+      </div>
+      <div class="flex flex-col">
+        <input class=" bg-gray-100 text-gray-900  p-3 rounded-lg focus:outline-none focus:shadow-outline" type="text"
+          name="lastName" placeholder="Last Name*" id="lastName" />
+        <span class="errorLastName hidden"></span>
+      </div>
+      <div class="flex flex-col">
+        <input class=" bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline" type="email"
+          name="email" placeholder="Email*" id="email" />
+        <span class="errorEmail hidden"></span>
+      </div>
+      <div class="flex flex-col">
+        <input type="text" placeholder="Enter DOB" onfocus="(this.type='date')" onblur="(this.type='text')" id="dob"
+          name="dob" class="bg-gray-100 p-3 rounded-lg  focus:outline-none focus:shadow-outline">
+        <span class="errorDob hidden"></span>
+      </div>
+
+      <div class=" p-3 flex gap-2 ">
+        <input type="radio" name="role" checked value="bidder">
+        <label for="">Bidder</label>
+        <input type="radio" name="role" value="seller">
+        <label for="">Seller</label>
+        <span class="errorRole hidden"></span>
+      </div>
+      <div class=" p-3 flex gap-2 ">
+        <input type="radio" name="gender"  value="male">
+        <label for="">Male</label>
+        <input type="radio" name="gender" value="female">
+        <label for="">Female</label>
+        <span class="errorGender hidden"></span>
+      </div>
+
+    </div>
+  </form>
+    <div class="mt-8 text-center w-1/2 mx-auto lg:w-1/4">
+      <button class="text-sm font-bold tracking-wide bg-[#334155] text-gray-100 p-3 rounded-lg w-full 
+                    focus:outline-none focus:shadow-outline" onclick="validateForm()">Register</button>
+
+    </div>
+    </div>
+    <h3 id="al" hidden></h3>
+</body>
+
+</html>

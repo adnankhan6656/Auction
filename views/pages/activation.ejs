@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/js/accountactivation.js"></script>
+  <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body>
+  <h4>Password guidelines</h4>
+    <ul>
+        <li>At least one lowercase alphabet i.e. [a-z]</li>
+        <li>At least one uppercase alphabet i.e. [A-Z]</li>
+        <li>At least one Numeric digit i.e. [0-9]</li>
+        <li>At least one special character i.e. [‘@’, ‘$’, ‘.’, ‘#’, ‘!’, ‘%’, ‘*’, ‘?’, ‘&’, ‘^’]</li>
+        <li>Also, the total length must be in the range [8-15]</li>
+    </ul>
+	<div class="max-w-md mx-auto p-8 my-10  rounded-2xl shadow-2xl">
+   
+      <h1 class="font-bold text-3xl">Set Password
+        
+      </h1>
+  <form id="passwordform">
+    <div class="grid grid-cols-1 gap-5 mt-5">
+     
+      <input class=" bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="password" name="password" placeholder="Password*" id="password" />
+      <input class=" bg-gray-100 text-gray-900  p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="password" name="confirmpassword" placeholder="Confirm Password*" id="confirmPassword"/>
+      
+      
+        <span class="passwordError"></span>
+      </div>
+    </form>
+      <div class="mt-8 text-center w-1/2 mx-auto lg:w-1/4">
+        <button class="text-sm font-bold tracking-wide bg-[#334155] text-gray-100 p-3 rounded-lg w-full 
+                    focus:outline-none focus:shadow-outline" onclick="validatepassword()">Activate</button>
+         
+      </div>
+    </div>
+</body>
+</html>

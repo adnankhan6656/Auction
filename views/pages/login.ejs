@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body>
+    <form
+      id="login-form"
+      class="max-w-md mx-auto p-8 my-10 rounded-2xl shadow-2xl"
+    >
+      <h1 class="font-bold text-5xl">Login</h1>
+
+      <div class="grid grid-cols-1 gap-5 mt-5">
+        <input
+          class="bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="email"
+          name="email"
+          placeholder="Email*"
+          id="email"
+        />
+        <span class="errorEmail hidden"></span>
+        <input
+          class="bg-gray-100 text-gray-900 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+          type="password"
+          name="password"
+          placeholder="Password*"
+          id="password"
+        />
+        <span class="passwordError"></span>
+      </div>
+
+      <div class="mt-8 text-center w-1/2 mx-auto lg:w-1/4">
+        <button
+          type="button"
+          id="submit-button"
+          class="text-sm font-bold tracking-wide bg-[#334155] text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+          onclick="validateForm()"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+    <script src="/js/login_validation.js"></script>
+    <script src="/js/login_store.js"></script>
+  </body>
+</html>
